@@ -36,3 +36,8 @@ CREATE TABLE card_transactions
     amount_in_kopecks INT         NOT NULL,
     created           TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE example_table (
+                               id INT AUTO_INCREMENT PRIMARY KEY,
+                               name VARCHAR(255) NOT NULL
+);

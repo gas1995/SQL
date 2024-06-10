@@ -1,20 +1,16 @@
 version: '3.8'
 
-services:
-  mysqldb:
-    image: mysql:8.0
-    container_name: mysql_container
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: mydatabase
-      MYSQL_USER: myuser
-      MYSQL_PASSWORD: mypassword
-    ports:
-      - "3306:3306"
-    volumes:
-      - db_data:/var/lib/mysql
-      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
-volumes:
-  db_data:
+services:
+          mysql:
+            image: mysql:8.0
+            ports:
+              - '3306:3306'
+            volumes:
+              - ./data:/var/lib/mysql
+              - ./init:/docker-entrypoint-initdb.d/:ro
+            environment:
+              MYSQL_ROOT_PASSWORD: rootpassword
+              MYSQL_DATABASE: mydatabase
+              MYSQL_USER: myuser
+              MYSQL_PASSWORD: mypassword
