@@ -16,7 +16,7 @@ public class DbHelper {
 
     @SneakyThrows
     private static Connection establishConnection() {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/deadline", "mrtotalsecurity", "CzmGtmRjc3cLGV7KXza294520qCMYXuF");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/deadline", "myuser", "mypassword");
     }
 
     @SneakyThrows
