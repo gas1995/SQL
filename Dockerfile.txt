@@ -1,5 +1,7 @@
 FROM mysql:8.0
 
+RUN apt-get update && apt-get install -y tzdata
+
 ENV MYSQL_ROOT_PASSWORD=rootpassword
 ENV MYSQL_DATABASE=mydatabase
 ENV MYSQL_USER=myuser
