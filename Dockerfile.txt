@@ -1,13 +1,9 @@
-FROM mysql:latest
+FROM mysql:8.0
 
-ENV MYSQL_RANDOM_ROOT_PASSWORD=yes
+ENV MYSQL_ROOT_PASSWORD=rootpassword
+ENV MYSQL_DATABASE=mydatabase
+ENV MYSQL_USER=myuser
+ENV MYSQL_PASSWORD=mypassword
 
-ENV MYSQL_DATABASE=deadline
-
-ENV MYSQL_USER=mrtotalsecurity
-
-ENV MYSQL_PASSWORD=CzmGtmRjc3cLGV7KXza294520qCMYXuF
-
-ADD schema.sql /docker-entrypoint-initdb.d/
-
-EXPOSE 3306
+COPY ./init.sql /docker-entrypoint-initdb.d/
+COPY ./schema.sql /docker-entrypoint-initdb.d/
