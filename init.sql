@@ -2,4 +2,4 @@
 SET GLOBAL host_cache_size = 0;
 
 -- Обновить пользователя для использования caching_sha2_password
-ALTER USER 'myuser'@'%' IDENTIFIED WITH 'caching_sha2_password' BY 'mypassword';
+ALTER USER 'app'@'%' IDENTIFIED WITH 'caching_sha2_password' BY 'pass';
