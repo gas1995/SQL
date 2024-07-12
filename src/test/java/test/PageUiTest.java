@@ -14,7 +14,7 @@ public class PageUiTest {
 
     @BeforeEach
     void setUp() {
-        open("http://localhost:3306");
+        open("http://localhost:9999");
     }
 
     @AfterEach
@@ -33,12 +33,4 @@ public class PageUiTest {
         verificationPage.validVerify(getCode());
     }
 
-    @Test
-    @Disabled
-    void shouldBeBlocked() {
-        LoginPage page = new LoginPage();
-        page.login(getAnotherAuthInfo());
-        page.login(getAnotherAuthInfo());
-        page.blockingLogin(getAnotherAuthInfo());
-    }
 }
